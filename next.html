@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Your Name</title>
+  <style>
+    /* Basic styling for the whole body */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('p.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Overlay to dim the background for better contrast */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    }
+
+    /* Centering the content container */
+    .content {
+      position: relative;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Light background with opacity */
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #ff80ab; /* Pastel pink for the title */
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Styling for the input field */
+    .input-area {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .input-area input {
+      padding: 15px;
+      width: 80%;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 1px solid #f8e1e8; /* Light border */
+      margin-right: 10px;
+      outline: none;
+    }
+
+    .input-area button {
+      padding: 15px 20px;
+      background-color: #ff4081; /* Soft pink for the button */
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .input-area button:hover {
+      background-color: #ff1f56; /* Darker pink on hover */
+    }
+
+    /* Styling for smaller screens */
+    @media (max-width: 500px) {
+      .content {
+        padding: 15px;
+        width: 90%;
+        max-width: 350px;
+      }
+
+      .input-area input {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Overlay to dim the background image -->
+  <div class="overlay"></div>
+
+  <!-- Centered Content -->
+  <div class="content">
+    <div class="header">
+      <h1>enter your name</h1>
+      <p style="color: #333;">We'll use it to personalize your experience</p>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userName" placeholder="Your Name" />
+      <button onclick="submitName()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to submit the name and store it in localStorage
+    function submitName() {
+      const name = document.getElementById('userName').value;
+      if (name) {
+        // Store the name in localStorage so it can be retrieved later
+        localStorage.setItem('userName', name);
+
+        // Redirect to the catalog page
+        window.location.href = 'catalog.html';
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+  </script>
+
+</body>
+</html>

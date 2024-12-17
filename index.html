@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Chat Interface</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .phone-container {
+      position: relative;
+      width: 350px;
+      height: 600px;
+      background-color: #f1b6e6;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.221);
+      overflow: hidden;
+      background: url('p.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: rgba(230, 114, 202, 0.463);
+      color: white;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      border-radius: 25px 25px 0 0;
+    }
+
+    .profile-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .profile-header h4 {
+      margin: 0;
+    }
+
+    .chat-box {
+      position: absolute;
+      bottom: 90px;
+      width: 100%;
+      height: 70%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      overflow-y: scroll;
+      box-sizing: border-box;
+    }
+
+    .message {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .sent {
+      justify-content: flex-end;
+    }
+
+    .received {
+      justify-content: flex-start;
+    }
+
+    .bubble {
+      max-width: 75%;
+      padding: 10px;
+      border-radius: 15px;
+      background-color: #e0e0e0;
+      word-wrap: break-word;
+    }
+
+    .sent .bubble {
+      background-color: #b3e5fc;
+    }
+
+    .received .bubble {
+      background-color: #f1f1f1;
+    }
+
+    .input-area {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .input-area input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    .input-area button {
+      background-color: #edb4dc;
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .input-area button:hover {
+      background-color: #ebd0f4;
+    }
+
+    @media (max-width: 375px) {
+      .phone-container {
+        width: 90%;
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <img src="https://i.pinimg.com/736x/9e/52/42/9e52423659282a0ac86e6dfbb79c69d0.jpg" alt="Profile Picture">
+      <h4>Web C</h4>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box" id="chat-box">
+      <div class="message received">
+        <div class="bubble">Hello! pencet lets go untuk melihat pricelist</div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <button onclick="letsGo()" style="padding: 10px 20px; border-radius: 20px; background-color: #008CBA; color: white; border: none; cursor: pointer;">
+        Let's Go
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+
+    // Fungsi menambahkan pesan ke chat box
+    function appendMessage(type, text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', type);
+
+      const bubbleDiv = document.createElement('div');
+      bubbleDiv.classList.add('bubble');
+      bubbleDiv.textContent = text;
+
+      messageDiv.appendChild(bubbleDiv);
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Scroll otomatis ke bawah
+    }
+
+    // Fungsi menambahkan button pricelist yang mengarah ke next.html
+    function addPricelistButton() {
+      const buttonDiv = document.createElement('div');
+      buttonDiv.style.display = 'flex';
+      buttonDiv.style.justifyContent = 'center';
+      buttonDiv.style.marginTop = '10px';
+
+      const pricelistButton = document.createElement('button');
+      pricelistButton.textContent = "Pricelist 📋";
+      pricelistButton.style.padding = "10px 20px";
+      pricelistButton.style.backgroundColor = "#4CAF50";
+      pricelistButton.style.color = "white";
+      pricelistButton.style.border = "none";
+      pricelistButton.style.borderRadius = "20px";
+      pricelistButton.style.cursor = "pointer";
+      pricelistButton.style.fontSize = "14px";
+
+      // Navigate to next.html when clicked
+      pricelistButton.onclick = () => {
+        window.location.href = "next.html"; // Redirect to next.html
+      };
+
+      buttonDiv.appendChild(pricelistButton);
+      chatBox.appendChild(buttonDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Scroll ke bawah
+    }
+
+    // Fungsi untuk tombol "Let's Go"
+    function letsGo() {
+      appendMessage('sent', "Let's Go 🚀");
+
+      setTimeout(() => {
+        appendMessage('received', "Jangan lupa subs @webcete.");
+
+        setTimeout(() => {
+          appendMessage('received', "i. Untuk menghindari miskomunikasi, disarankan bergabung melalui channel utama kami di @webcete dengan menekan tombol 'join'.");
+
+          setTimeout(() => {
+            appendMessage('received', "ii. Pembayaran 50% sebelum proses produksi dimulai guna mencegah kejadian tak diinginkan seperti 'hit and run'. Metode pembayaran yang tersedia meliputi Dana dan QRIS. Kirimkan tangkapan layar bukti pembayaran agar pesanan dapat segera diproses.");
+
+            setTimeout(() => {
+              appendMessage('received', "iii. Kami akan berusaha semaksimal mungkin membuat pesanan sesuai format yang telah diisi. Oleh karena itu, harap mengisi format dengan detail agar sesuai dengan keinginan Anda. Jika masih bingung, konsultasi dapat dilakukan terlebih dahulu melalui kontak yang tersedia.");
+
+              setTimeout(() => {
+                appendMessage('received', "iv. Segala bentuk pengambilan, penjiplakan, atau penjualan katalog dan karya tanpa izin dilarang keras. Pelanggaran berupa plagiarisme akan dikenakan denda sebesar IDR 500.000.");
+
+                setTimeout(() => {
+                  appendMessage('received', "v. Pembatalan pesanan secara sepihak tidak diperbolehkan, kecuali atas kebijakan dari pihak kami. Setelah format dikirimkan, pengembalian dana tidak akan dilakukan.");
+
+                  setTimeout(() => {
+                    appendMessage('received', "vi. Pengerjaan pesanan akan dilakukan segera setelah pembayaran atau sesuai kesepakatan. Maksimal waktu pengiriman adalah satu minggu, jika melebihi batas tersebut, silakan hubungi kontak yang disediakan.");
+
+                    // Munculkan tombol pricelist setelah semua pesan selesai
+                    setTimeout(() => {
+                      addPricelistButton();
+                    }, 500);
+                  }, 500);
+                }, 500);
+              }, 500);
+            }, 500);
+          }, 500);
+        }, 500);
+      }, 500);
+    }
+  </script>
+</body>
+</html>

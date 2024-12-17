@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga Netflix</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head><style>
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .playlist-container {
+            margin: 30px auto;
+            padding: 20px;
+            width: 95%;
+            max-width: 400px;
+            background-color: #181818;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .playlist-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .playlist-header img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain; /* Menjaga proporsi logo */
+            border-radius: 8px;
+        }
+        .playlist-title h1 {
+            font-size: 18px;
+            margin: 0;
+            color: #fff;
+        }
+        .playlist-title span {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .icon-container i {
+            font-size: 20px;
+            color: #b3b3b3;
+            cursor: pointer;
+        }
+        .icon-container i:hover {
+            color: #fff;
+        }
+        .play-btn {
+            font-size: 40px;
+            color: #1db954;
+        }
+        .price-list {
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        .price-item {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        .price-item strong {
+            font-size: 16px;
+            color: #fff;
+        }
+        .price-item span {
+            font-size: 14px;
+            color: #1db954;
+            margin-top: 5px;
+        }
+        a.contact-link {
+            display: block;
+            text-align: center;
+            margin: 20px auto 0;
+            padding: 10px;
+            background-color: #1db954;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            width: 80%;
+        }
+        a.contact-link:hover {
+            background-color: #1ed760;
+        }
+    </style>
+</head>
+<body>
+    <div class="playlist-container">
+        <!-- Header Playlist -->
+        <div class="playlist-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo">
+            <div class="playlist-title">
+                <h1>Netflix</h1>
+                <span>Universal and Timeless Deals</span>
+            </div>
+        </div>
+
+        <!-- Ikon -->
+<div class="icon-container">
+    <i class="fa fa-heart" style="font-size:20px;color:white;"></i> <!-- Ikon Hati -->
+    <i class="fa fa-random" style="font-size:20px;color:white;"></i> <!-- Ikon Shuffle -->
+    <i class="fa fa-play-circle-o" style="font-size:20px;color:white;"></i> <!-- Tombol Play -->
+    <i class="fa fa-ellipsis-v" style="font-size:20px;color:white;"></i> <!-- Ikon Menu -->
+</div>
+
+        <!-- Daftar Harga -->
+        <div class="price-list">
+            <div class="price-item">
+                <strong>1 Hari</strong>
+                <span>4k</span>
+            </div> 
+            <div class="price-item">
+                <strong>2 Hari</strong>
+                <span>6k</span>
+            </div>
+            <div class="price-item">
+                <strong>3 Hari</strong>
+                <span>8k</span>
+            </div>
+            <div class="price-item">
+                <strong>4 Hari</strong>
+                <span>10k</span>
+            </div>
+            <div class="price-item">
+                <strong>5 Hari</strong>
+                <span>12k</span>
+            </div>
+            <div class="price-item">
+                <strong>6 Hari</strong>
+                <span>14k</span>
+            </div>
+            <div class="price-item">
+                <strong>7 Hari</strong>
+                <span>15k</span>
+            </div>
+            <div class="price-item">
+                <strong>1 Bulan</strong>
+                <span>38k</span>
+            </div>
+            <div class="price-item">
+                <strong>2 Bulan</strong>
+                <span>70k</span>
+            </div>
+            <div class="price-item">
+                <strong>3 Bulan</strong>
+                <span>100k</span>
+            </div>
+            <div class="price-item">
+                <strong>SEMI PRIVATE</strong>
+                <span>42k</span>
+            </div>
+            <div class="price-item">
+                <strong>PRIVATE</strong>
+                <span>65k</span>
+            </div>
+        </div>
+
+        <!-- Tombol Telegram -->
+        <a href="https://t.me/ceceaan" class="contact-link" target="_blank">Hubungi @ceceaan</a>
+    </div>
+</body>
+</html>

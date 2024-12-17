@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram-like Profile</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* Profile container */
+        .profile-container {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Profile header */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 20px;
+        }
+
+        .profile-header .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-header .user-info {
+            flex: 1;
+        }
+
+        .profile-header .user-info h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .profile-header .user-info p {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Stats section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats div span {
+            display: block;
+            font-weight: bold;
+        }
+
+        .stats div p {
+            color: #888;
+        }
+
+        /* Bio section */
+        .bio {
+            padding: 15px;
+        }
+
+        .bio p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Scrollable feed section */
+        .feed {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 4 items per row */
+            gap: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            height: 400px;
+            padding-bottom: 30px;
+            grid-auto-rows: 200px; /* Sets each row height to 200px */
+        }
+
+        .feed .post {
+            position: relative;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feed .post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feed .post .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: #888;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .bottom-nav a:hover {
+            color: #333;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <img
+          src="https://i.pinimg.com/736x/9e/52/42/9e52423659282a0ac86e6dfbb79c69d0.jpg"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <div class="user-info">
+          <h1>WEBC</h1>
+          <p>@webcete</p>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats">
+        <div>
+          <span>150</span>
+          <p>Posts</p>
+        </div>
+        <div>
+          <span>1.2k</span>
+          <p>Followers</p>
+        </div>
+        <div>
+          <span>300</span>
+          <p>Following</p>
+        </div>
+      </div>
+
+      <!-- Bio Section with Greeting -->
+      <div class="bio">
+        <p id="greeting">Hello, [Name]! Welcome to my profile.</p>
+        <p>
+          Upon the edge, an eternal abode
+stands proudly amidst
+the serene majesty of endless shores,
+where golden sands meet whispering tides 👒
+
+        </p>
+        <a href="https;t.me/ceceaan"><p>
+          klik here to chat admin
+        </p></a>
+      </div>
+      
+
+      <!-- Scrollable Feed Section -->
+      <div class="feed">
+        <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+        <!-- Post 4 -->
+         <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+         <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+         <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+         <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+         <!-- Post 1 -->
+        <!-- Post 1 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://jobs.netflix.com/static/images/Netflix-Social-Rectangle.png"
+      alt="Post 1"
+    />
+  </a>
+  <div class="caption">NETFLIX</div>
+</div>
+
+<!-- Post 2 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://yt3.ggpht.com/a/AATXAJxHHtPbWemlH6B-x9AKy3Y86TGlWtqMvh8u8FQkjQ=s900-c-k-c0xffffffff-no-rj-mo"
+      alt="Post 2"
+    />
+  </a>
+  <div class="caption">PRIME</div>
+</div>
+
+<!-- Post 3 -->
+<div class="post">
+  <a href="netflix.html">
+    <img
+      src="https://moviemotion.com.my/wp-content/uploads/2020/07/viu-logo-1024x683.jpg"
+      alt="Post 3"
+    />
+  </a>
+  <div class="caption">VIU</div>
+</div>
+
+     
+
+    <script>
+      // Function to set the greeting from localStorage
+      window.onload = function () {
+        const userName = localStorage.getItem("userName"); // Retrieve name from localStorage
+        const greetingElement = document.getElementById("greeting");
+
+        if (userName) {
+          greetingElement.textContent = `Hello, ${userName}! Welcome to my profile.`;
+        } else {
+          greetingElement.textContent = "Hello, Guest! Welcome to my profile.";
+        }
+      };
+    </script>
+  </body>
+</html>
